@@ -8,9 +8,9 @@ export default function Home({posts}) {
     <div>
       <h1>Welcome to my blog!</h1>
       <ul>
-        {posts.map(post=>{
+        {posts.map(post=>(
           <li key={post.id}>{post.title}</li>
-        })}
+        ))}
       </ul>
     </div>
   )
@@ -19,7 +19,7 @@ export default function Home({posts}) {
 // 서버사이드
 // 서버에서 데이터가 바꼈을 때 바로바로 즉각적으로 빈번하게 변화
 // export const getServerSideProps = async() => {
-//   const res = await fetch('http://localhost:8080/api/posts');
+//   const res = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=10');
 //   const posts = await res.json();
 
 //   return {
@@ -36,7 +36,7 @@ export default function Home({posts}) {
 // 새로운 데이터를 보여주기 위해선 revalidate 사용
 // 페이지가 즉각적으로 변화하지 않아도 된다면 스태틱사이드 사용(더 빠른 렌더링, 처리속도)
 export const getStaticProps = async() => {
-  const res = await fetch('http://localhost:8080/api/posts')
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=10')
   const posts = await res.json();
 
   return {
