@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import HeadInfo from '../components/HeadInfo';
 import Image from 'next/image';
-import photosStyles from '../styles/photos.module.css';
+import photosStyles from '../styles/Photos.module.css';
 import Link from 'next/link';
 
 const photos = ({photos}) => {
